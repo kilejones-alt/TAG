@@ -5,7 +5,7 @@
 /* v43 attribution fix */
 /* v42 live hebrew fix */
 (() => {
-  const search = document.querySelector('#azSearch');
+  const search = document.querySelector('#azSearch, [data-term-search], .search');
   if (search) {
     search.addEventListener('input', () => {
       const value = search.value.toLowerCase();
@@ -18,10 +18,9 @@
 
 
   function lockHomepageLanguage() {
-    if (!document.body.classList.contains('home')) return;
     const path = decodeURIComponent(window.location.pathname || '').toLowerCase();
     const file = path.split('/').pop();
-    const isHebrewPage = file === 'index-he.html' || document.body.dataset.siteLang === 'he' || document.body.classList.contains('hebrew-page');
+    const isHebrewPage = file === 'index-he.html' || /-he\.html$/.test(file) || document.body.dataset.siteLang === 'he' || document.body.classList.contains('hebrew-page');
     if (isHebrewPage) {
       document.documentElement.lang = 'he';
       document.documentElement.dir = 'rtl';
@@ -32,9 +31,9 @@
     }
     document.documentElement.lang = 'en';
     document.documentElement.dir = 'ltr';
-    document.body.dataset.siteLang = 'en';
-    document.body.classList.add('english-page');
+    if (document.body.classList.contains('home')) document.body.dataset.siteLang = 'en';
     document.body.classList.remove('hebrew-page');
+    if (document.body.classList.contains('home')) document.body.classList.add('english-page');
   }
 
   function normalizeGlossaryIntro() {
