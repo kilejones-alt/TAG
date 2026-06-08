@@ -1,3 +1,4 @@
+/* v20 live fix: Hebrew link hardening, subtle cursor trail, hover text glow */
 /* v47 layered sparkles */
 /* v46 static page language: no saved browser language state may rewrite homepage text. */
 /* v45 crackle sparkles */
@@ -117,16 +118,16 @@
     }
 
     function makeSpark(now = performance.now()) {
-      if (x < 0 || y < 0 || now - lastSpark < 190) return;
+      if (x < 0 || y < 0 || now - lastSpark < 55) return;
       lastSpark = now;
       const dot = document.createElement('span');
       dot.className = 'cursor-spark';
-      dot.style.left = `${x + (Math.random() * 8 - 4)}px`;
-      dot.style.top = `${y + (Math.random() * 8 - 4)}px`;
+      dot.style.left = `${x + (Math.random() * 10 - 5)}px`;
+      dot.style.top = `${y + (Math.random() * 10 - 5)}px`;
       dot.style.setProperty('--trail-x', `${Math.random() * 12 - 6}px`);
       dot.style.setProperty('--trail-y', `${-3 - Math.random() * 10}px`);
       sparks.appendChild(dot);
-      setTimeout(() => dot.remove(), 1200);
+      setTimeout(() => dot.remove(), 1050);
     }
 
     function move(event) {
@@ -367,7 +368,59 @@
   }
 
 
+  function hardenHebrewRouting() {
+    const hebrewFiles = new Set(['about-he.html', 'anti-zionism-1880-1947-he.html', 'anti-zionism-1948-october-6-2023-he.html', 'anti-zionism-he.html', 'antizionism-october-7-2023-present-he.html', 'apartheid-he.html', 'apartheid-wall-he.html', 'blood-on-your-hands-he.html', 'boycott-divestment-sanctions-he.html', 'butcher-of-gaza-he.html', 'by-any-means-necessary-he.html', 'ceasefire-now-he.html', 'child-killers-he.html', 'collective-punishment-he.html', 'colonizer-he.html', 'contact-he.html', 'death-to-the-idf-he.html', 'decolonization-he.html', 'end-the-blockade-he.html', 'end-the-occupation-he.html', 'ethnic-cleansing-he.html', 'ethnostate-he.html', 'free-palestine-he.html', 'from-the-river-to-the-sea-he.html', 'genocide-he.html', 'globalize-the-intifada-he.html', 'glossary-he.html', 'hasbara-he.html', 'image-credits-he.html', 'imperial-state-he.html', 'index-he.html', 'intifada-he.html', 'introduction-he.html', 'jewish-supremacy-he.html', 'method-he.html', 'modern-day-nazis-he.html', 'nazi-state-he.html', 'normalization-he.html', 'occupation-he.html', 'open-air-prison-he.html', 'pinkwashing-he.html', 'resistance-he.html', 'resources-he.html', 'settler-colonialism-he.html', 'stop-the-genocide-he.html', 'zio-zionazi-he.html', 'zionism-he.html', 'zionism-is-racism-he.html', 'zionist-entity-he.html']);
+    const path = decodeURIComponent(window.location.pathname || '');
+    const file = path.split('/').pop() || 'index.html';
+    const params = new URLSearchParams(window.location.search || '');
+    const isHebrew = document.documentElement.lang === 'he' || document.body.dataset.siteLang === 'he' || document.body.classList.contains('hebrew-page') || /-he\.html$/i.test(file) || file === 'index-he.html';
+    function toHebrewFile(name) {
+      if (!name || name === 'index.html' || name === '') return 'index-he.html';
+      if (/-he\.html$/i.test(name)) return name;
+      return name.replace(/\.html$/i, '-he.html');
+    }
+    function localNameFromHref(href) {
+      if (!href || href.startsWith('#') || /^[a-z]+:/i.test(href) || href.startsWith('//')) return null;
+      const clean = href.split('#')[0].split('?')[0];
+      const name = clean.split('/').pop();
+      return name || 'index.html';
+    }
+    if (params.get('lang') === 'he' && !isHebrew) {
+      const target = toHebrewFile(file);
+      if (hebrewFiles.has(target)) {
+        window.location.replace(target);
+        return;
+      }
+    }
+    if (isHebrew) {
+      try { sessionStorage.setItem('tagSiteLang', 'he'); } catch(e) {}
+      document.documentElement.lang = 'he';
+      document.documentElement.dir = 'rtl';
+      document.body.dataset.siteLang = 'he';
+      document.body.classList.add('hebrew-page');
+      document.body.classList.remove('english-page');
+      document.querySelectorAll('a[href]').forEach((a) => {
+        if (a.getAttribute('lang') === 'en' || a.closest('.entry-side') && /EN/i.test(a.textContent || '')) return;
+        const href = a.getAttribute('href');
+        const name = localNameFromHref(href);
+        if (!name || /-he\.html$/i.test(name) || name === 'index-he.html') return;
+        const target = toHebrewFile(name);
+        if (!hebrewFiles.has(target)) return;
+        const hash = href.includes('#') ? '#' + href.split('#').slice(1).join('#') : '';
+        a.setAttribute('href', href.replace(name, target).split('#')[0] + hash);
+      });
+    }
+    document.querySelectorAll('a[lang="he"], a[href$="-he.html"], a[href="index-he.html"]').forEach((a) => {
+      a.addEventListener('click', () => { try { sessionStorage.setItem('tagSiteLang','he'); } catch(e) {} }, { passive:true });
+    });
+    document.querySelectorAll('a[lang="en"]').forEach((a) => {
+      a.addEventListener('click', () => { try { sessionStorage.setItem('tagSiteLang','en'); } catch(e) {} }, { passive:true });
+    });
+  }
+
+
   lockHomepageLanguage();
+  hardenHebrewRouting();
   normalizeGlossaryIntro();
   normalizeIndexDates();
   ensureSparkles();
