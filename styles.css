@@ -1894,3 +1894,12 @@ body.home-v52.art-installation-page::after {
 .home-v52 .home-emblem-logo {
   background: transparent !important;
 }
+
+/* v70 homepage logo blend fix */
+.home-v52 .home-emblem {
+  mix-blend-mode: screen;
+  opacity: .92;
+}
+.home-v52 .home-emblem-logo {
+  background: transparent !important;
+}
