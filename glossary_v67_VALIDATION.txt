@@ -1,0 +1,25 @@
+TAG v67 VALIDATION
+Base: TheAntizionistGlossary_v66_homepage_manuscript_melt_full_repo.zip
+Change set: homepage logo/manuscript blend + Hebrew homepage fix
+
+Static parse checks:
+- index.html: OK
+- index-he.html: OK
+
+Content/file checks:
+- index.html uses new logo asset: PASS
+- index-he.html uses new logo asset: PASS
+- index-he title updated: PASS
+- Hebrew page has Hebrew author spelling: PASS
+- English page quote exact: PASS
+- Hebrew attribution exact: PASS
+- saved logo asset exists root: PASS
+- saved logo asset exists assets copy: PASS
+- saved mockup reference exists root: PASS
+
+Notes:
+- Saved the provided Inverted World logo as inverted-world-logo.png and assets/inverted-world-logo.png.
+- Saved the approved homepage visual direction as homepage-award-direction-reference.png and assets/homepage-award-direction-reference.png.
+- Hebrew homepage copy was rewritten in Hebrew and the top-right toggle now points back to EN.
+- Hebrew homepage is mirrored at the homepage level. However, the repo still does not contain separate Hebrew glossary/resources/interior pages, so the Hebrew homepage glossary link still opens the English glossary page.
+- Browser rendering was not fully verified here; this report is based on static file inspection and HTML parse checks.

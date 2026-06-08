@@ -1,0 +1,47 @@
+The Antizionist Glossary v68 validation report
+
+Working base:
+- v67 working repo built from TheAntizionistGlossary_v67_homepage_logo_hebrew_fix_full_repo.zip state in /mnt/data/tag_v67_work
+
+Task performed:
+1) Created Hebrew glossary mirror page.
+2) Updated the Hebrew homepage so its גלוסר link goes to glossary-he.html instead of glossary.html.
+3) Kept the Hebrew homepage in Hebrew and kept document lang/dir Hebrew.
+4) Updated the three independent antizionism page images to regular glossary-image scale.
+5) Applied the same antizionism image sizing/blending to root and /entries/ copies.
+6) Cropped the first anti-zionism poster page to the top of the image, so the top portion shows instead of the full long poster.
+
+Files changed or included for this v68 package:
+- index.html
+- index-he.html
+- glossary-he.html
+- styles.css
+- anti-zionism-1880-1947.html
+- entries/anti-zionism-1880-1947.html
+- anti-zionism-1948-october-6-2023.html
+- entries/anti-zionism-1948-october-6-2023.html
+- antizionism-october-7-2023-present.html
+- entries/antizionism-october-7-2023-present.html
+- inverted-world-logo.png
+- assets/inverted-world-logo.png
+- homepage-award-direction-reference.png
+- assets/homepage-award-direction-reference.png
+
+Static validation completed:
+- HTML parse OK: index.html
+- HTML parse OK: index-he.html
+- HTML parse OK: glossary-he.html
+- HTML parse OK: root and /entries/ copies of all three independent antizionism pages
+- Confirmed index-he.html links to glossary-he.html.
+- Confirmed glossary-he.html title is Hebrew.
+- Confirmed glossary-he.html uses Hebrew lang/dir setup.
+- Confirmed root and /entries/ copies of the three independent antizionism pages include anti-zionism image classes.
+- Confirmed styles.css contains the v68 antizionism image sizing block.
+
+Important limitation:
+- This creates a Hebrew glossary mirror page, but individual entry pages are still English unless separately translated later.
+- Browser rendering was not fully verified in this environment; this report claims static validation only.
+
+Image behavior intended by CSS:
+- Antizionism entry images now use max-width min(430px, 94vw), height 275px, object-fit cover, and blended overlay treatment.
+- The first anti-zionism poster uses object-position center top, so it shows the top portion rather than the full long poster.

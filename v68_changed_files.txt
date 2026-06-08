@@ -1,0 +1,14 @@
+index.html
+index-he.html
+glossary-he.html
+styles.css
+anti-zionism-1880-1947.html
+entries/anti-zionism-1880-1947.html
+anti-zionism-1948-october-6-2023.html
+entries/anti-zionism-1948-october-6-2023.html
+antizionism-october-7-2023-present.html
+entries/antizionism-october-7-2023-present.html
+inverted-world-logo.png
+assets/inverted-world-logo.png
+homepage-award-direction-reference.png
+assets/homepage-award-direction-reference.png

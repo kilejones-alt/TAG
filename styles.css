@@ -1565,3 +1565,323 @@ body.home-v52.art-installation-page::after {
   image-rendering: auto !important;
   filter: grayscale(18%) sepia(6%) brightness(.94) contrast(1.04) saturate(.94) !important;
 }
+
+
+/* v66 homepage manuscript background refinement: less magnified, recessed, edges melted into the page */
+.home-v52 .home-manuscript-ghost {
+  width: min(1180px, 84vw) !important;
+  height: 96vh !important;
+  left: 50% !important;
+  top: 2vh !important;
+  transform: translateX(-50%) !important;
+  object-fit: contain !important;
+  object-position: center 40% !important;
+  opacity: .36 !important;
+  filter:
+    sepia(.08)
+    saturate(.88)
+    brightness(.82)
+    contrast(1.01)
+    drop-shadow(0 0 18px rgba(235, 190, 94, .05)) !important;
+  mask-image:
+    radial-gradient(ellipse at center,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,.98) 44%,
+      rgba(0,0,0,.84) 62%,
+      rgba(0,0,0,.48) 80%,
+      rgba(0,0,0,.14) 90%,
+      rgba(0,0,0,0) 100%) !important;
+  -webkit-mask-image:
+    radial-gradient(ellipse at center,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,.98) 44%,
+      rgba(0,0,0,.84) 62%,
+      rgba(0,0,0,.48) 80%,
+      rgba(0,0,0,.14) 90%,
+      rgba(0,0,0,0) 100%) !important;
+}
+.home-v52 .home-cosmos::before {
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(0,0,0,.02) 0%, rgba(0,0,0,.10) 38%, rgba(0,0,0,.32) 68%, rgba(0,0,0,.70) 100%),
+    linear-gradient(90deg, rgba(0,0,0,.74) 0%, rgba(0,0,0,.26) 17%, rgba(0,0,0,.10) 33%, rgba(0,0,0,.10) 67%, rgba(0,0,0,.26) 83%, rgba(0,0,0,.74) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.54) 0%, rgba(0,0,0,.16) 24%, rgba(0,0,0,.14) 68%, rgba(0,0,0,.56) 100%) !important;
+}
+.home-v52 .home-light-one {
+  opacity: .30 !important;
+  width: min(48vw, 560px) !important;
+  height: min(28vw, 300px) !important;
+}
+.home-v52 .home-light-two {
+  opacity: .26 !important;
+}
+.home-v52 .home-ring-one,
+.home-v52 .home-ring-two {
+  opacity: .08 !important;
+}
+@media (max-width: 900px) {
+  .home-v52 .home-manuscript-ghost {
+    width: min(128vw, 900px) !important;
+    height: 96vh !important;
+    top: 3vh !important;
+    object-fit: contain !important;
+    object-position: center 38% !important;
+    opacity: .31 !important;
+  }
+  .home-v52 .home-cosmos::before {
+    background:
+      radial-gradient(ellipse at 50% 36%, rgba(0,0,0,.04) 0%, rgba(0,0,0,.16) 42%, rgba(0,0,0,.40) 70%, rgba(0,0,0,.76) 100%),
+      linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.30) 16%, rgba(0,0,0,.12) 32%, rgba(0,0,0,.12) 68%, rgba(0,0,0,.30) 84%, rgba(0,0,0,.78) 100%),
+      linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.20) 25%, rgba(0,0,0,.18) 66%, rgba(0,0,0,.60) 100%) !important;
+  }
+}
+
+
+/* v67 homepage globe/logo + Hebrew homepage fix */
+.home-v52 .home-manuscript-ghost {
+  position: absolute;
+  left: 50%;
+  top: -4vh;
+  width: min(1320px, 110vw);
+  height: 110vh;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center 45%;
+  opacity: .30;
+  filter: sepia(.10) saturate(.82) brightness(.72) contrast(.90);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.98) 0%, rgba(0,0,0,.92) 36%, rgba(0,0,0,.66) 62%, rgba(0,0,0,.26) 82%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.98) 0%, rgba(0,0,0,.92) 36%, rgba(0,0,0,.66) 62%, rgba(0,0,0,.26) 82%, rgba(0,0,0,0) 100%);
+}
+.home-v52 .home-light-one {
+  top: 14vh;
+  width: min(54vw, 680px);
+  height: min(22vw, 260px);
+  opacity: .22;
+  background: radial-gradient(ellipse at center, rgba(255, 214, 130, .14), rgba(238, 186, 76, .03) 50%, rgba(238, 186, 76, 0) 74%);
+}
+.home-v52 .home-light-two {
+  top: 36vh;
+  width: min(82vw, 1060px);
+  height: min(32vw, 360px);
+  opacity: .16;
+  background: radial-gradient(ellipse at center, rgba(255, 205, 124, .06), rgba(255, 205, 124, 0) 74%);
+}
+.home-v52 .home-ring-one {
+  top: 12vh;
+  width: min(40vw, 470px);
+  height: min(40vw, 470px);
+  opacity: .09;
+}
+.home-v52 .home-ring-two {
+  top: 6vh;
+  width: min(64vw, 760px);
+  height: min(64vw, 760px);
+  opacity: .06;
+}
+.home-v52 .home-installation-v52 {
+  padding-top: clamp(118px, 13vh, 150px);
+}
+.home-v52 .home-emblem {
+  position: relative;
+  z-index: 10;
+  width: min(310px, 32vw);
+  margin: 0 auto 30px;
+}
+.home-v52 .home-emblem-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(.96) drop-shadow(0 0 14px rgba(255,255,255,.06)) drop-shadow(0 0 30px rgba(239,184,73,.10));
+}
+.home-v52 .home-panel {
+  width: min(1060px, 100%);
+  padding: clamp(20px, 2.4vw, 30px) clamp(24px, 3vw, 38px) clamp(18px, 2.2vw, 26px);
+  background: linear-gradient(180deg, rgba(10,10,10,.14), rgba(10,10,10,.22) 56%, rgba(8,8,8,.28) 100%);
+  border-color: rgba(218, 184, 119, .10);
+  box-shadow: 0 20px 66px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.03), 0 0 72px rgba(236, 184, 71, .04);
+  backdrop-filter: blur(6px) saturate(106%);
+}
+.home-v52 .home-panel::before {
+  background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0) 24%);
+}
+.home-v52 .home-kicker {
+  margin-bottom: 18px;
+}
+.home-v52 .home-panel h1 {
+  font-size: clamp(48px, 5.7vw, 82px);
+  letter-spacing: .02em;
+  white-space: normal;
+}
+.home-v52 .home-subtitle {
+  max-width: 34ch;
+  margin-top: 18px;
+  font-size: clamp(18px, 1.95vw, 30px);
+}
+.home-v52 .home-author {
+  margin-top: 14px;
+  font-size: clamp(15px, 1.22vw, 20px);
+}
+.home-v52 .home-quote {
+  margin-top: clamp(26px, 4vh, 34px);
+}
+.home-v52 .home-quote-panel {
+  padding: 14px 24px 18px;
+  background: linear-gradient(180deg, rgba(8,8,8,.06), rgba(8,8,8,.20));
+  border-color: rgba(215, 183, 120, .11);
+  box-shadow: 0 14px 34px rgba(0,0,0,.18);
+  backdrop-filter: blur(8px);
+}
+.home-v52 .home-quote p:first-child {
+  font-size: clamp(14px, 1.08vw, 16.5px);
+}
+.home-v52.hebrew-page .language-nav,
+.home-v52.hebrew-page .gallery-topbar nav {
+  letter-spacing: .08em;
+}
+.home-v52.hebrew-page .home-panel h1 {
+  font-size: clamp(44px, 5.5vw, 76px);
+  line-height: 1.06;
+}
+.home-v52.hebrew-page .home-subtitle {
+  max-width: 26ch;
+  font-style: normal;
+  line-height: 1.45;
+}
+.home-v52.hebrew-page .home-author {
+  letter-spacing: 0;
+}
+.home-v52.hebrew-page .home-quote strong,
+.home-v52.hebrew-page .home-quote span {
+  text-transform: none;
+}
+.home-v52.hebrew-page .home-quote span {
+  font: 600 14px/1.6 Georgia, 'Times New Roman', serif;
+  letter-spacing: 0;
+  color: #d8b578;
+}
+@media (max-width: 900px) {
+  .home-v52 .home-manuscript-ghost {
+    width: min(1600px, 148vw);
+    height: 112vh;
+    top: -2vh;
+    object-position: center 44%;
+    opacity: .28;
+  }
+  .home-v52 .home-emblem {
+    width: min(260px, 54vw);
+    margin-bottom: 22px;
+  }
+  .home-v52 .home-panel {
+    width: min(100%, 980px);
+    padding: 18px 18px 20px;
+  }
+  .home-v52 .home-subtitle {
+    max-width: 26ch;
+  }
+}
+
+
+/* v68 antizionism period image sizing: regular glossary-image scale, blended edges */
+.anti-zionism-entry-image.entry-image,
+.entry-image.anti-zionism-entry-image,
+.anti-zionism-first-page-poster.entry-image,
+.entry-image.anti-zionism-first-page-poster {
+  position: relative !important;
+  max-width: min(430px, 94vw) !important;
+  margin: 0 auto 34px !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  background:
+    radial-gradient(ellipse at 50% 48%, rgba(216,189,122,.12), transparent 64%),
+    #050403 !important;
+}
+.anti-zionism-entry-image.entry-image img,
+.entry-image.anti-zionism-entry-image img,
+.anti-zionism-first-page-poster.entry-image img,
+.entry-image.anti-zionism-first-page-poster img {
+  display: block !important;
+  width: 100% !important;
+  height: 275px !important;
+  max-height: 275px !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: .92 !important;
+  border: 1px solid rgba(216,189,122,.18) !important;
+  filter: grayscale(48%) sepia(8%) brightness(.82) contrast(1.08) saturate(.82) !important;
+  background: #050403 !important;
+}
+.anti-zionism-first-page-poster.entry-image img,
+.entry-image.anti-zionism-first-page-poster img {
+  object-position: center top !important;
+}
+.anti-zionism-entry-image.entry-image::before,
+.entry-image.anti-zionism-entry-image::before,
+.anti-zionism-first-page-poster.entry-image::before,
+.entry-image.anti-zionism-first-page-poster::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    radial-gradient(ellipse at 50% 46%, rgba(255,255,255,0) 34%, rgba(0,0,0,.30) 72%, rgba(0,0,0,.68) 100%),
+    linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,.04) 28%, rgba(0,0,0,.12) 63%, rgba(0,0,0,.58)) !important;
+}
+.anti-zionism-entry-image.entry-image::after,
+.entry-image.anti-zionism-entry-image::after,
+.anti-zionism-first-page-poster.entry-image::after,
+.entry-image.anti-zionism-first-page-poster::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+  box-shadow:
+    inset 0 0 54px rgba(0,0,0,.74),
+    inset 0 0 120px rgba(0,0,0,.46),
+    0 24px 70px rgba(0,0,0,.54) !important;
+}
+@media (max-width: 560px) {
+  .anti-zionism-entry-image.entry-image,
+  .entry-image.anti-zionism-entry-image,
+  .anti-zionism-first-page-poster.entry-image,
+  .entry-image.anti-zionism-first-page-poster {
+    max-width: min(360px, 94vw) !important;
+  }
+  .anti-zionism-entry-image.entry-image img,
+  .entry-image.anti-zionism-entry-image img,
+  .anti-zionism-first-page-poster.entry-image img,
+  .entry-image.anti-zionism-first-page-poster img {
+    height: 230px !important;
+    max-height: 230px !important;
+  }
+}
+
+
+/* v69 minimal Hebrew mirror */
+.hebrew-page main,
+.hebrew-page .gallery-main,
+.hebrew-page .entry-layout,
+.hebrew-page .entry-main,
+.hebrew-page .entry-side,
+.hebrew-page .author-card,
+.hebrew-page .resource-grid {
+  direction: rtl;
+}
+.hebrew-page .language-nav,
+.hebrew-page .gallery-topbar nav {
+  direction: ltr;
+}
+.hebrew-page .entry-side {
+  border-left: 0;
+  border-right: 1px solid rgba(216,189,122,.18);
+  padding-left: 0;
+  padding-right: 24px;
+}
+.hebrew-stub-note {
+  color: #d8bd7a;
+  border-right: 2px solid rgba(216,189,122,.45);
+  padding: 10px 16px 10px 0;
+  background: rgba(216,189,122,.045);
+}

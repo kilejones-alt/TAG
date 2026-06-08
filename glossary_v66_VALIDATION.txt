@@ -1,0 +1,45 @@
+The Antizionist Glossary v66 validation report
+
+Working base:
+- /mnt/data/TheAntizionistGlossary_v65_antizionism_poster_paragraphs_full_repo.zip
+
+Task performed:
+- Homepage background refinement only.
+- Goal: make the manuscript/celestial image less magnified and more recessed, with the image melting into the background rather than reading as a magnified full-bleed panel.
+
+Files changed:
+- styles.css
+- index.html
+- index-he.html
+
+What changed:
+1) styles.css
+   - Added a v66 homepage override block.
+   - Reduced the homepage manuscript image scale.
+   - Switched the manuscript image back to a contained/recessed treatment instead of the current full-bleed cover treatment.
+   - Increased edge feathering with a radial mask so boundaries melt into the page.
+   - Strengthened side/top/bottom dark overlays for a recessed dark-gallery effect.
+   - Lowered light/ring prominence so the background image reads more softly.
+   - Added mobile-specific overrides matching the same direction.
+
+2) index.html
+   - Updated stylesheet query string to v66-homepage-manuscript-melt for cache-busting.
+
+3) index-he.html
+   - Updated stylesheet query string to v66-homepage-manuscript-melt for cache-busting.
+
+Static verification completed:
+- Confirmed the v66 CSS block exists in styles.css.
+- Confirmed both index.html and index-he.html reference styles.css?v=v66-homepage-manuscript-melt.
+- Confirmed only the three files above changed.
+
+Browser/local rendering note:
+- I attempted a local headless Chromium render for index.html and index-he.html.
+- In this environment, Chromium did not complete a reliable screenshot render in time.
+- So I am not claiming browser-verified rendering here.
+- Static validation only is claimed.
+
+Proof snippets:
+- styles.css contains: "v66 homepage manuscript background refinement: less magnified, recessed, edges melted into the page"
+- index.html contains: styles.css?v=v66-homepage-manuscript-melt
+- index-he.html contains: styles.css?v=v66-homepage-manuscript-melt

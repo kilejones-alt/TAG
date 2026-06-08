@@ -1,0 +1,20 @@
+TAG v69 VALIDATION
+Base: TheAntizionistGlossary_v68_hebrew_glossary_antizionism_images_full_repo.zip
+Change set: minimal Hebrew mirror
+
+HTML parse OK count: 85
+HTML parse failures: none
+
+Static checks:
+- index-he links to glossary-he: PASS
+- glossary-he links to Hebrew entry pages: PASS
+- resources-he exists: PASS
+- Hebrew stub entry pages created root: PASS
+- Hebrew stub entry pages created entries folder: PASS
+- CSS v69 block present: PASS
+
+Notes:
+- Created Hebrew mirror entry pages with Hebrew titles, short glossary descriptions, section headers, navigation, and footers.
+- Full entry prose remains English inside Hebrew mirror pages and is marked with a Hebrew note for later translation/editing.
+- Created Hebrew resources, about, contact, image credits, introduction, and method placeholder pages to keep Hebrew navigation from falling back to English.
+- Browser rendering was not fully verified here; validation is static HTML/file inspection.

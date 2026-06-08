@@ -1,0 +1,7 @@
+index.html
+index-he.html
+styles.css
+inverted-world-logo.png
+assets/inverted-world-logo.png
+homepage-award-direction-reference.png
+assets/homepage-award-direction-reference.png
