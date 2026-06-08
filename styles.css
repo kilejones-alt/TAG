@@ -1886,20 +1886,20 @@ body.home-v52.art-installation-page::after {
   background: rgba(216,189,122,.045);
 }
 
-/* v70 homepage logo blend fix */
+/* v70 homepage logo integration fix: transparent logo, no hard black square */
 .home-v52 .home-emblem {
-  mix-blend-mode: screen;
-  opacity: .92;
+  width: min(258px, 27vw) !important;
+  margin: 0 auto 28px !important;
+  background: transparent !important;
 }
 .home-v52 .home-emblem-logo {
   background: transparent !important;
+  opacity: .94 !important;
+  filter: brightness(.98) contrast(1.03) drop-shadow(0 0 12px rgba(255,255,255,.08)) drop-shadow(0 0 28px rgba(239,184,73,.12)) !important;
 }
-
-/* v70 homepage logo blend fix */
-.home-v52 .home-emblem {
-  mix-blend-mode: screen;
-  opacity: .92;
-}
-.home-v52 .home-emblem-logo {
-  background: transparent !important;
+@media (max-width: 900px) {
+  .home-v52 .home-emblem {
+    width: min(224px, 46vw) !important;
+    margin-bottom: 24px !important;
+  }
 }
