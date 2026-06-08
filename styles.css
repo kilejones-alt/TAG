@@ -1885,3 +1885,12 @@ body.home-v52.art-installation-page::after {
   padding: 10px 16px 10px 0;
   background: rgba(216,189,122,.045);
 }
+
+/* v70 homepage logo blend fix */
+.home-v52 .home-emblem {
+  mix-blend-mode: screen;
+  opacity: .92;
+}
+.home-v52 .home-emblem-logo {
+  background: transparent !important;
+}
