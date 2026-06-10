@@ -2313,3 +2313,13 @@ h1:hover,h2:hover,h3:hover,.entry-label:hover,.eyebrow:hover,.home-kicker:hover,
     margin-bottom:clamp(6.2rem,14vh,8rem) !important;
   }
 }
+
+/* v69: keep old-look glossary intro card while making the whole card a single Introduction link. */
+a.glossary-intro-card.intro-only-card{
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+}
+a.glossary-intro-card.intro-only-card h2{
+  margin:0;
+}
